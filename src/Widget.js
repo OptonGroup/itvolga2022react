@@ -1,14 +1,11 @@
 import React from 'react';
-import Counter from './comp/Counter.jsx'
+import Header from './comp/Header.jsx'
 
 function Widget() {
 
     return ( 
         <div className="Widget">
-            <Counter/>
-            <div className="">
-
-            </div>
+            <Header/>
         </div>
     );
 }
