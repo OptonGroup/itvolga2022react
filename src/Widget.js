@@ -1,11 +1,27 @@
-import React from 'react';
-import Header from './comp/Header.jsx'
+import React, {useState} from 'react';
+import Header from './comp/header.jsx'
+import Slides from './comp/slides.jsx'
+import './styles/widget.css'
 
 function Widget() {
+    const [slide, setSlide] = useState(0);
+
+    function nextSlide(){
+        setSlide(slide+1);
+    }
+
+    function previousSlide(){
+        setSlide(slide-1);
+    }
+
+    function zeroSlide(){
+        setSlide(slide-slide);
+    }
 
     return ( 
-        <div className="Widget">
-            <Header/>
+        <div className="widget">
+            <Header slide={slide} nextSlide={nextSlide}  previousSlide={previousSlide}  zeroSlide={zeroSlide}/>
+            <Slides slide={slide} nextSlide={nextSlide}/>
         </div>
     );
 }
