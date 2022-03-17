@@ -8,19 +8,28 @@ import '../styles/header.css'
 
 
 const Header = function({slide, nextSlide, previousSlide, zeroSlide}){
-    if (slide === 0 || slide === 11){
+    var slideClass = 'slide-'+String(slide) + ' progressBar';
+    if (slide === 0){
         return (
-            <header>
+            <header className='startHeader'>
                 <img src={logo} className='logo' alt=''/>
                 <img src={next} className='next' alt='' onClick={nextSlide}/>
             </header>
         )
-    } else{
+    } else if(slide === 11){
+        <header className='defineHeader'>
+            <img src={logo} className='logo' alt=''/>
+            <img src={exit} className='exit' alt='' onClick={zeroSlide}/>
+            <span className={slideClass}></span>
+        </header>
+    }
+    else{
         return (
-            <header>
+            <header className='defineHeader'>
                 <img src={back} className='before' alt='' onClick={previousSlide}/>
                 <p>{slide}/10</p>
                 <img src={exit} className='exit' alt='' onClick={zeroSlide}/>
+                <span className={slideClass}></span>
             </header>
         )
     }

@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react';
-import Widget from './Widget';
+import ReactDOM from 'react-dom';
+import Widget from './widget.js';
 
 ReactDOM.render(
     <Widget/>,
