@@ -4,7 +4,7 @@ import pick from "../img/pick0.png"
 import womStyle from "../img/womenStyle.svg"
 import menStyle from "../img/menStyle.svg"
 import eyeglasses from "../img/eyeglasses.svg"
-import sunglasses from "../img/eyeglasses.svg"
+import sunglasses from "../img/sunglasses.svg"
 import gift from "../img/gift.svg"
 
 
