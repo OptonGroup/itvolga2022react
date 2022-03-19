@@ -9,9 +9,14 @@ import menStyle from "../img/menStyle.svg"
 import eyeglasses from "../img/eyeglasses.svg"
 import sunglasses from "../img/sunglasses.svg"
 // slide 3
-import like from "../img/like.svg"
+import Anim from './comp/animate.jsx'
 // slide 11
 import gift from "../img/gift.svg"
+
+function changeSlide(){
+    document.getElementsByClassName("slideS")[0].classList.remove("d-none");
+    document.getElementsByClassName("slideF")[0].classList.add("d-none");
+}
 
 
 const Slides = function({slide, nextSlide, chooseParam}){
@@ -61,10 +66,31 @@ const Slides = function({slide, nextSlide, chooseParam}){
         case 3:
             return ( 
                 <div className="slide-3">
-                    <div className='circle'>
-                        <img src={like} alt=''></img>
+                    <Anim text="Let's get to know you!"/>
+
+                    <div className="slideF">
+                        <p className="thirdAttention">Do you need vision correction?</p>
+                        <div className="card" onClick={changeSlide}>
+                            <p className="secondAttention">Yes</p>
+                        </div>
+                        <div className="card" onClick={nextSlide}>
+                            <p className="secondAttention">No</p>
+                        </div>
+                        <p className="bottomText" onClick={nextSlide}>Skip</p>
                     </div>
-                    <p className="firstAttention">Let's get to know you!</p>
+                    <div className="slideS d-none">
+                        <p className="thirdAttention">What do you need your glasses for?</p>
+                        <div className="card" onClick={() => chooseParam(6)}>
+                            <p className="secondAttention">Near Vision</p>
+                        </div>
+                        <div className="card" onClick={() => chooseParam(6)}>
+                            <p className="secondAttention">Distance Vision</p>
+                        </div>
+                        <div className="card" onClick={() => chooseParam(7)}>
+                            <p className="secondAttention">Multifocal / Progressive</p>
+                        </div>
+                        <p className="bottomText" onClick={nextSlide}>Skip</p>
+                    </div>
                 </div>
                 
             );

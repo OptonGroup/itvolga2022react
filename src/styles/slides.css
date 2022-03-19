@@ -88,6 +88,10 @@
     cursor: pointer;
 }
 
+.d-none{
+    display: none;
+}
+
 /* slide 0 */
 
 .slide-0 .confirm {
@@ -236,27 +240,6 @@
 }
 
 /* slide 3 */
-
-.slide-3 .circle{
-    position: relative;
-    width: 132px;
-    height: 132px;
-    background-color: #F7F8F9;
-    box-shadow: -9px -9px 16px #FFFFFF, 9px 9px 16px rgba(163, 177, 198, 0.325148);
-    margin: 100px calc(50% - 132px / 2) 32px calc(50% - 132px / 2);
-    border-radius: 50%;
-}
-
-@keyframes rotate {
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
-.slide-3 .circle img{
-    margin: 26.5px 31.5px 31.5px 31.5px;
-    animation: rotate 1s;
-}
 
 .slide-3 .firstAttention{
     margin: 40px 25px 0 25px;

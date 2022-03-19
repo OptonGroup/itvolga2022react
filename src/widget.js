@@ -53,7 +53,7 @@ function Widget() {
 
     function nextSlide(){
         setSlide(slide+1);
-        if(slide >= 3){
+        if(slide >= 4){
             send();
             zeroSlide();
         }
