@@ -8,7 +8,7 @@ import '../styles/header.css'
 
 
 const Header = function({slide, nextSlide, previousSlide, zeroSlide}){
-    var slideClass = 'slide-'+String(slide) + ' progressBar';
+    var slideClass = 'slide'+String(slide) + ' progressBar';
     if (slide === 0){
         return (
             <header className='startHeader'>

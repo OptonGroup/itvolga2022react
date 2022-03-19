@@ -12,4 +12,5 @@ body, #root, .widget{
 
 .widget{
     background-color: #F7F8F9;
+    min-height: 600px;
 }

@@ -1,10 +1,16 @@
 import React from "react";
 import '../styles/slides.css'
-import pick from "../img/pick0.png"
+// slide 0
+import pick from "../img/pick0.webp"
+// slide 1
 import womStyle from "../img/womenStyle.svg"
 import menStyle from "../img/menStyle.svg"
+// slide 2
 import eyeglasses from "../img/eyeglasses.svg"
 import sunglasses from "../img/sunglasses.svg"
+// slide 3
+import like from "../img/like.svg"
+// slide 11
 import gift from "../img/gift.svg"
 
 
@@ -53,6 +59,16 @@ const Slides = function({slide, nextSlide, chooseParam}){
                 </div>
             );
         case 3:
+            return ( 
+                <div className="slide-3">
+                    <div className='circle'>
+                        <img src={like} alt=''></img>
+                    </div>
+                    <p className="firstAttention">Let's get to know you!</p>
+                </div>
+                
+            );
+        case 4:
             return ( 
                 <div className="slide-11">
                     <div className='circle'>
