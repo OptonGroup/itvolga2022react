@@ -2,10 +2,10 @@ import React from "react";
 import '../styles/animate.css'
 import like from "../img/like.svg"
 
-const Animate = function({text, classes=""}){
-    classes += " anim"
+const Animate = function({text, classN=""}){
+    classN += " anim";
     return (
-        <div className={classes}>
+        <div className={classN}>
             <div className='circle'>
                 <img src={like} alt=''></img>
             </div>

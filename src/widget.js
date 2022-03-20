@@ -4,7 +4,7 @@ import Slides from './comp/slides.jsx'
 import './styles/widget.css'
 
 var link = document.getElementById("glasses-quiz-widget").dataset.source;
-var params = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined];
+var params = [[null], [null], [null], [null], [null, null], [null], [null], [null], [null], [null]];
 var paramsName = ['gender', 'eyewear_type', 'lenstype', 'frame_size', ['blue_light', 'shade'], 'face_shape', 'facial_features', 'shape', 'brand'];
 
 function Widget() {
@@ -15,19 +15,18 @@ function Widget() {
         if (new_link[new_link.length-1] !== '/') new_link += '/';
         new_link += '?';
         params.forEach(function(param, ind){
-            if (param !== undefined){
+            if (param.length > 1 || param[0] !== null){
                 
                 switch (ind){
                     case 4:
-                        if (param[0] !== undefined)
+                        if (param[0] !== null)
                             new_link += paramsName[ind][0] + '=' + String(param[0]) + '&';
-                        if (param[1] !== undefined)
+                        if (param[1] !== null)
                             new_link += paramsName[ind][1] + '=' + String(param[1]) + '&';
-
                         break;
                     case 7:
                     case 8:
-                        new_link += paramsName[ind];
+                        new_link += paramsName[ind] += '=';
                         param.forEach(function(val){
                             new_link += val + ',';
                         })
@@ -35,7 +34,7 @@ function Widget() {
                         new_link += '&';
                         break;
                     default:
-                        new_link += paramsName[ind] + '=' + String(param) + '&';
+                        new_link += paramsName[ind] + '=' + String(param[0]) + '&';
                         break;
                 }
 
@@ -48,20 +47,24 @@ function Widget() {
     }
 
     function chooseParam(param, next=true){
+        console.log(param);
+        console.log(params)
         if (slide === 5){
             if (typeof param === 'string')
-                params[slide-1][0] = param;
-            else
                 params[slide-1][1] = param;
-            }
-        params[slide-1] = param;
+            else
+                params[slide-1][0] = param;
+        }else
+            params[slide-1][0] = param;
         if (next)
             nextSlide();
     }
 
-    function nextSlide(){
-        setSlide(slide+1);
-        if(slide >= 5){
+    function nextSlide(double=1){
+        
+        if (double === 2) setSlide(slide+2);
+        else              setSlide(slide+1);
+        if(slide >= 11){
             send();
             zeroSlide();
         }
@@ -73,7 +76,7 @@ function Widget() {
 
     function zeroSlide(){
         setSlide(slide-slide);
-        params = [undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined];
+        params = [[null], [null], [null], [null], [null, null], [null], [null], [null], [null]];
     }
 
     return ( 

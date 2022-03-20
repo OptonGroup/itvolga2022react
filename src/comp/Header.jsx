@@ -17,11 +17,13 @@ const Header = function({slide, nextSlide, previousSlide, zeroSlide}){
             </header>
         )
     } else if(slide === 11){
-        <header className='defineHeader'>
+        return(
+            <header className='defineHeader'>
             <img src={logo} className='logo' alt=''/>
             <img src={exit} className='exit' alt='' onClick={zeroSlide}/>
             <span className={slideClass}></span>
         </header>
+        );
     }
     else{
         return (

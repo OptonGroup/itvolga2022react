@@ -14,6 +14,22 @@ import suncat from "../img/suncateye.svg"
 import Anim from '../comp/animate.jsx'
 // slide 4
 import sizes from "../img/sizes.webp"
+// slide 5
+import darkshade from "../img/darkshade.svg"
+import liteshade from "../img/liteshade.svg"
+import transitioningshade from "../img/transitioningshade.svg"
+// slide 6
+import ovalmen1 from "../img/ovalmen1.svg"
+import roundmen from "../img/roundmen.svg"
+import ovalmen2 from "../img/ovalmen2.svg"
+
+import ovalwomen from "../img/ovalwomen.svg"
+import roundwomen from "../img/roundwomen.svg"
+import roundwomen2 from "../img/roundwomen2.svg"
+
+import twofaces1 from "../img/twofaces1.svg"
+import twofaces2 from "../img/twofaces2.svg"
+import twofaces3 from "../img/twofaces3.svg"
 // slide 11
 import gift from "../img/gift.svg"
 
@@ -43,7 +59,7 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                         <img src={menStyle} alt=''/>
                         <p className="secondAttention">Men's Styles</p>
                     </div>
-                    <p className="bottomText" onClick={() => chooseParam(undefined)}>I'd like to see both</p>
+                    <p className="bottomText" onClick={() => chooseParam(null)}>I'd like to see both</p>
                 </div>
             );
         case 2:
@@ -59,7 +75,7 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                             <img src={sunglasses} alt=''/>
                             <p className="secondAttention">Sunglasses</p>
                         </div>
-                        <p className="bottomText" onClick={() => chooseParam(undefined)}>I want to see both</p>
+                        <p className="bottomText" onClick={() => chooseParam(null)}>I want to see both</p>
                     </div>
                 );
             }else{
@@ -74,24 +90,34 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                             <img src={suncat} alt=''/>
                             <p className="secondAttention">Sunglasses</p>
                         </div>
-                        <p className="bottomText" onClick={() => chooseParam(undefined)}>I want to see both</p>
+                        <p className="bottomText" onClick={() => chooseParam(null)}>I want to see both</p>
                     </div>
                 );
             }
             
         case 3:
             function changeSlide3(){
-                document.getElementsByClassName("slideS")[0].classList.remove("d-none");
-                document.getElementsByClassName("slideF")[0].classList.add("d-none");
+                if (slide !== 3) return;
+                if (document.getElementsByClassName("slideS").length)
+                    document.getElementsByClassName("slideS")[0].classList.remove("d-none");
+                if (document.getElementsByClassName("slideF").length)
+                    document.getElementsByClassName("slideF")[0].classList.add("d-none");
             }
             setTimeout(function(){
-                document.getElementsByClassName("anim")[0].classList.add("d-none");
-                document.getElementsByClassName("slideF")[0].classList.remove("d-none")
+                if (slide !== 3) return;
+                if (document.getElementsByClassName("anim").length)
+                    document.getElementsByClassName("anim")[0].classList.add("d-none");
+                if (document.getElementsByClassName("slideF").length)
+                    document.getElementsByClassName("slideF")[0].classList.remove("d-none")
             }, 2000);
-            if (document.getElementsByClassName("slideF").length){
-                document.getElementsByClassName("anim")[0].classList.add("d-none");
+
+            if (document.getElementsByClassName("anim").length)
+                    document.getElementsByClassName("anim")[0].classList.remove("d-none");
+            if (document.getElementsByClassName("slideF").length)
+                    document.getElementsByClassName("slideF")[0].classList.add("d-none");
+            if (document.getElementsByClassName("slideS").length)
                 document.getElementsByClassName("slideS")[0].classList.add("d-none");
-            }
+            
             return ( 
                 <div className="slide-3">
                     <Anim text="Let's get to know you!"/>
@@ -101,10 +127,10 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                         <div className="card" onClick={changeSlide3}>
                             <p className="secondAttention">Yes</p>
                         </div>
-                        <div className="card" onClick={() => chooseParam(undefined)}>
+                        <div className="card" onClick={() => chooseParam(null)}>
                             <p className="secondAttention">No</p>
                         </div>
-                        <p className="bottomText" onClick={() => chooseParam(undefined)}>Skip</p>
+                        <p className="bottomText" onClick={() => chooseParam(null)}>Skip</p>
                     </div>
 
                     <div className="slideS d-none">
@@ -118,27 +144,36 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                         <div className="card" onClick={() => chooseParam(7)}>
                             <p className="secondAttention">Multifocal / Progressive</p>
                         </div>
-                        <p className="bottomText" onClick={() => chooseParam(undefined)}>Skip</p>
+                        <p className="bottomText" onClick={() => chooseParam(null)}>Skip</p>
                     </div>
                 </div>
             );
         case 4:
             function changeSlide41(){
-                document.getElementsByClassName("anim")[0].classList.remove("d-none");
-                document.getElementsByClassName("slideF")[0].classList.add("d-none");
+                if (slide !== 4) return;
+                if (document.getElementsByClassName("anim").length)
+                    document.getElementsByClassName("anim")[0].classList.remove("d-none");
+                if (document.getElementsByClassName("slideF").length)
+                    document.getElementsByClassName("slideF")[0].classList.add("d-none");
                 setTimeout(function(){
+                    if (slide !== 4) return;
                     document.getElementsByClassName("anim")[0].classList.add("d-none");
                     document.getElementsByClassName("slideS")[0].classList.remove("d-none")
                 }, 2000)
             }
             function changeSlide42(){
-                document.getElementsByClassName("slideS")[0].classList.remove("d-none");
-                document.getElementsByClassName("slideF")[0].classList.add("d-none");
+                if (slide !== 4) return;
+                if (document.getElementsByClassName("slideS").length)
+                    document.getElementsByClassName("slideS")[0].classList.remove("d-none");
+                if (document.getElementsByClassName("slideF").length)
+                    document.getElementsByClassName("slideF")[0].classList.add("d-none");
             }
-            if (document.getElementsByClassName("anim").length || document.getElementsByClassName("slideS")[0].length){
+            if (document.getElementsByClassName("slideF").length)
+                document.getElementsByClassName("slideF")[0].classList.remove("d-none");
+            if (document.getElementsByClassName("anim").length)
                 document.getElementsByClassName("anim")[0].classList.add("d-none");
+            if (document.getElementsByClassName("slideS").length)
                 document.getElementsByClassName("slideS")[0].classList.add("d-none");
-            }
             
             return ( 
                 <div className="slide-4">
@@ -160,7 +195,7 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                         <p className="bottomText" onClick={changeSlide42}>I don’t know</p>
                     </div>
 
-                    <Anim classes="d-none" text="No worries, we’ve got you!"/>
+                    <Anim classN="d-none" text="No worries, we’ve got you!"/>
 
                     <div className="slideS d-none">
                         <p className="thirdAttention">How wide would you say your face is?</p>
@@ -173,22 +208,65 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                         <div className="card" onClick={() => chooseParam(68)}>
                             <p className="secondAttention">Narrower Than Average</p>
                         </div>
-                        <p className="bottomText" onClick={() => chooseParam(undefined)}>Skip</p>
+                        <p className="bottomText" onClick={() => chooseParam(null)}>Skip</p>
                     </div>
                 </div>
             );
         case 5:
             function changeSlide5(){
-                document.getElementsByClassName("slideS")[0].classList.remove("d-none");
-                document.getElementsByClassName("slideF")[0].classList.add("d-none");
+                if (slide !== 5) return;
+                if (document.getElementsByClassName("slideS").length)
+                    document.getElementsByClassName("slideS")[0].classList.remove("d-none");
+                if (document.getElementsByClassName("slideF").length)
+                    document.getElementsByClassName("slideF")[0].classList.add("d-none");
             }
-           
 
-            if (params[1] === undefined){
-                if (document.getElementsByClassName("slideS").length || document.getElementsByClassName("slideS").length){
+            if (params[1][0] === 211){
+                if (document.getElementsByClassName("slideS").length)
+                    document.getElementsByClassName("slideS")[0].classList.remove("d-none");
+                return ( 
+                    <div className="slide-5">
+                        <div className="slideS">
+                                <p className="thirdAttention">When you’re out and about, which shade of lenses do you prefer?</p>
+                                <div className="card" onClick={() => chooseParam("dark")}>
+                                    <img src={darkshade} alt=""></img>
+                                    <span></span>
+                                    <p className="secondAttention">Dark Shade</p>
+                                </div>
+                                <div className="card" onClick={() => chooseParam("light")}>
+                                    <img src={liteshade} alt=""></img>
+                                    <span></span>
+                                    <p className="secondAttention">Light Shade</p>
+                                </div>
+                                <div className="card" onClick={() => chooseParam("transition")}>
+                                    <img src={transitioningshade} alt=""></img>
+                                    <span></span>
+                                    <p className="secondAttention">Transitioning Shade</p>
+                                </div>
+                            </div>
+                    </div>
+                );
+            }else if(params[1][0] === 210){
+                if (document.getElementsByClassName("slideF").length)
                     document.getElementsByClassName("slideF")[0].classList.remove("d-none");
+                return ( 
+                    <div className="slide-5">
+                        <div className="slideF">
+                            <p className="thirdAttention">Would you like to protect your eyes from light emanating from screens?</p>
+                            <div className="card" onClick={() => chooseParam(true)}>
+                                <p className="secondAttention">Yes</p>
+                            </div>
+                            <div className="card" onClick={() => chooseParam(false)}>
+                                <p className="secondAttention">No</p>
+                            </div>
+                        </div>
+                    </div>
+                );
+            }else{
+                if (document.getElementsByClassName("slideS").length)
+                    document.getElementsByClassName("slideF")[0].classList.remove("d-none");
+                if (document.getElementsByClassName("slideS").length)
                     document.getElementsByClassName("slideS")[0].classList.add("d-none");
-                }
                 return ( 
                     <div className="slide-5">
                         <div className="slideF">
@@ -204,51 +282,155 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                         <div className="slideS d-none">
                             <p className="thirdAttention">When you’re out and about, which shade of lenses do you prefer?</p>
                             <div className="card" onClick={() => chooseParam("dark")}>
+                                <img src={darkshade} alt=""></img>
+                                <span></span>
                                 <p className="secondAttention">Dark Shade</p>
                             </div>
                             <div className="card" onClick={() => chooseParam("light")}>
+                                <img src={liteshade} alt=""></img>
+                                <span></span>
                                 <p className="secondAttention">Light Shade</p>
                             </div>
                             <div className="card" onClick={() => chooseParam("transition")}>
+                                <img src={transitioningshade} alt=""></img>
+                                <span></span>
                                 <p className="secondAttention">Transitioning Shade</p>
                             </div>
                         </div>
                     </div>
                 );
-            }else if(params[1] === 210){
-                return ( 
-                    <div className="slide-5">
-                        <div className="slideF">
-                            <p className="thirdAttention">Would you like to protect your eyes from light emanating from screens?</p>
-                            <img src={sizes} alt=""></img>
-                            <div className="card" onClick={function(event){chooseParam(true, false);changeSlide5();}}>
-                                <p className="secondAttention">Yes</p>
-                            </div>
-                            <div className="card" onClick={function(event){chooseParam(false, false);changeSlide5();}}>
-                                <p className="secondAttention">No</p>
-                            </div>
-                        </div>
-                    </div>
-                );
-            }else{
-                return ( 
-                    <div className="slide-5">
-                        <div className="slideS">
-                                <p className="thirdAttention">When you’re out and about, which shade of lenses do you prefer?</p>
-                                <div className="card" onClick={() => chooseParam("dark")}>
-                                    <p className="secondAttention">Dark Shade</p>
-                                </div>
-                                <div className="card" onClick={() => chooseParam("light")}>
-                                    <p className="secondAttention">Light Shade</p>
-                                </div>
-                                <div className="card" onClick={() => chooseParam("transition")}>
-                                    <p className="secondAttention">Transitioning Shade</p>
-                                </div>
-                            </div>
-                    </div>
-                )
             }
-        case 6:
+            case 6:    
+                if (params[0][0] === 5){
+                    return ( 
+                        <div className="slide-6">
+                            <p className="thirdAttention">Every face shape has a perfect fit. What’s yours?</p>
+                            <div className="card" onClick={() => chooseParam("long")}>
+                                <img src={ovalmen1} className="one" alt=""></img>
+                                <span></span>
+                                <p className="secondAttention">I have a long face</p>
+                            </div>
+                            <div className="card" onClick={() => chooseParam("round")}>
+                                <img src={roundmen} className="one" alt=""></img>
+                                <span></span>
+                                <p className="secondAttention">I have a round face</p>
+                            </div>
+                            <div className="card" onClick={() => chooseParam("between")}>
+                                <img src={ovalmen2} className="one" alt=""></img>
+                                <span></span>
+                                <p className="secondAttention">In between</p>
+                            </div>
+                            <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+                        </div>
+                    );
+                }else if(params[0][0] === 4){
+                    return ( 
+                        <div className="slide-6">
+                            <p className="thirdAttention">Every face shape has a perfect fit. What’s yours?</p>
+                            <div className="card" onClick={() => chooseParam("long")}>
+                                <img src={ovalwomen} className="one" alt=""></img>
+                                <span></span>
+                                <p className="secondAttention">I have a long face</p>
+                            </div>
+                            <div className="card" onClick={() => chooseParam("round")}>
+                                <img src={roundwomen} className="one" alt=""></img>
+                                <span></span>
+                                <p className="secondAttention">I have a round face</p>
+                            </div>
+                            <div className="card" onClick={() => chooseParam("between")}>
+                                <img src={roundwomen2} className="one" alt=""></img>
+                                <span></span>
+                                <p className="secondAttention">In between</p>
+                            </div>
+                            <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+                        </div>
+                    );
+                }else{
+                    return ( 
+                        <div className="slide-6">
+                            <p className="thirdAttention">Every face shape has a perfect fit. What’s yours?</p>
+                            <div className="card" onClick={() => chooseParam("long")}>
+                                <img src={twofaces1} className="two" alt=""></img>
+                                <span></span>
+                                <p className="secondAttention">I have a long face</p>
+                            </div>
+                            <div className="card" onClick={() => chooseParam("round")}>
+                                <img src={twofaces2} className="two" alt=""></img>
+                                <span></span>
+                                <p className="secondAttention">I have a round face</p>
+                            </div>
+                            <div className="card" onClick={() => chooseParam("between")}>
+                                <img src={twofaces3} className="two" alt=""></img>
+                                <span></span>
+                                <p className="secondAttention">In between</p>
+                            </div>
+                            <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+                        </div>
+                    );
+                }
+        case 7:
+            return(
+                <div className="slide-7">
+                    <p className="thirdAttention">How would you define your facial features?</p>
+                    <div className="card" onClick={() => chooseParam("sharp")}>
+                        <p className="secondAttention">Sharp</p>
+                    </div>
+                    <div className="card" onClick={() => chooseParam("rounded")}>
+                        <p className="secondAttention">Rounded</p>
+                    </div>
+                    <div className="card" onClick={() => chooseParam("between")}>
+                        <p className="secondAttention">In between</p>
+                    </div>
+                    <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+                </div>
+            );
+
+        case 8:
+            return(
+                <div className="slide-7">
+                    <p className="thirdAttention">How would you define your facial features?</p>
+                    <div className="card" onClick={() => chooseParam("sharp")}>
+                        <p className="secondAttention">Sharp</p>
+                    </div>
+                    <div className="card" onClick={() => chooseParam("rounded")}>
+                        <p className="secondAttention">Rounded</p>
+                    </div>
+                    <div className="card" onClick={() => chooseParam("between")}>
+                        <p className="secondAttention">In between</p>
+                    </div>
+                    <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+                </div>
+            );
+        case 9:
+            return(
+                <div className="slide-9">
+                    <p className="thirdAttention">Are you looking for any particular eyewear brands?</p>
+                    <div className="card" onClick={nextSlide}>
+                        <p className="secondAttention">Yes, I have some in mind</p>
+                    </div>
+                    <div className="card" onClick={() => nextSlide(2)}>
+                        <p className="secondAttention">No, brand isn't important</p>
+                    </div>
+                </div>
+            );
+        case 10:
+            return(
+                <div className="slide-7">
+                    <p className="thirdAttention">How would you define your facial features?</p>
+                    <div className="card" onClick={() => chooseParam("sharp")}>
+                        <p className="secondAttention">Sharp</p>
+                    </div>
+                    <div className="card" onClick={() => chooseParam("rounded")}>
+                        <p className="secondAttention">Rounded</p>
+                    </div>
+                    <div className="card" onClick={() => chooseParam("between")}>
+                        <p className="secondAttention">In between</p>
+                    </div>
+                    <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+                </div>
+            );
+
+        case 11:
             return ( 
                 <div className="slide-11">
                     <div className='circle'>
