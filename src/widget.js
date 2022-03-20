@@ -19,10 +19,11 @@ function Widget() {
                 
                 switch (ind){
                     case 4:
-                        if(params[1] === 210)
-                            new_link += paramsName[ind][0] + '=' + String(param) + '&';
-                        else
-                            new_link += paramsName[ind][1] + '=' + String(param) + '&';
+                        if (param[0] !== undefined)
+                            new_link += paramsName[ind][0] + '=' + String(param[0]) + '&';
+                        if (param[1] !== undefined)
+                            new_link += paramsName[ind][1] + '=' + String(param[1]) + '&';
+
                         break;
                     case 7:
                     case 8:
@@ -46,14 +47,21 @@ function Widget() {
         console.log('\n');
     }
 
-    function chooseParam(param){
+    function chooseParam(param, next=true){
+        if (slide === 5){
+            if (typeof param === 'string')
+                params[slide-1][0] = param;
+            else
+                params[slide-1][1] = param;
+            }
         params[slide-1] = param;
-        nextSlide();
+        if (next)
+            nextSlide();
     }
 
     function nextSlide(){
         setSlide(slide+1);
-        if(slide >= 4){
+        if(slide >= 5){
             send();
             zeroSlide();
         }
@@ -71,7 +79,7 @@ function Widget() {
     return ( 
         <div className="widget">
             <Header slide={slide} nextSlide={nextSlide} previousSlide={previousSlide}  zeroSlide={zeroSlide}/>
-            <Slides slide={slide} nextSlide={nextSlide} chooseParam={chooseParam}/>
+            <Slides slide={slide} nextSlide={nextSlide} chooseParam={chooseParam} params={params}/>
         </div>
     );
 }

@@ -15,6 +15,7 @@
 }
 
 .anim .circle img{
+    width: 68px;
     margin: 26.5px 31.5px 31.5px 31.5px;
     animation: rotate 1s;
 }
