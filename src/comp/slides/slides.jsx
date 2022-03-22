@@ -1,37 +1,61 @@
 import React from "react";
-import '../styles/slides.css'
+import Anim from '../animate/animate.jsx'
+import './slides.css'
+
 // slide 0
-import pick from "../img/pick0.webp"
+import pick from "./img/slide0/pick0.webp"
 // slide 1
-import womStyle from "../img/womenStyle.svg"
-import menStyle from "../img/menStyle.svg"
+import womStyle from "./img/slide1/womenStyle.svg"
+import menStyle from "./img/slide1/menStyle.svg"
 // slide 2
-import eyeglasses from "../img/eyeglasses.svg"
-import sunglasses from "../img/sunglasses.svg"
-import eyecat from "../img/cateye.svg"
-import suncat from "../img/suncateye.svg"
-// slide 3
-import Anim from '../comp/animate.jsx'
+import eyeglasses from "./img/slide2/eyeglasses.svg"
+import sunglasses from "./img/slide2/sunglasses.svg"
+import eyecat from "./img/slide2/cateye.svg"
+import suncat from "./img/slide2/suncateye.svg"
 // slide 4
-import sizes from "../img/sizes.webp"
+import sizes from "./img/slide4/sizes.webp"
 // slide 5
-import darkshade from "../img/darkshade.svg"
-import liteshade from "../img/liteshade.svg"
-import transitioningshade from "../img/transitioningshade.svg"
+import darkshade from "./img/slide5/darkshade.svg"
+import liteshade from "./img/slide5/liteshade.svg"
+import transitioningshade from "./img/slide5/transitioningshade.svg"
 // slide 6
-import ovalmen1 from "../img/ovalmen1.svg"
-import roundmen from "../img/roundmen.svg"
-import ovalmen2 from "../img/ovalmen2.svg"
-
-import ovalwomen from "../img/ovalwomen.svg"
-import roundwomen from "../img/roundwomen.svg"
-import roundwomen2 from "../img/roundwomen2.svg"
-
-import twofaces1 from "../img/twofaces1.svg"
-import twofaces2 from "../img/twofaces2.svg"
-import twofaces3 from "../img/twofaces3.svg"
+import ovalmen1 from "./img/slide6/ovalmen1.svg"
+import roundmen from "./img/slide6/roundmen.svg"
+import ovalmen2 from "./img/slide6/ovalmen2.svg"
+import ovalwomen from "./img/slide6/ovalwomen.svg"
+import roundwomen from "./img/slide6/roundwomen.svg"
+import roundwomen2 from "./img/slide6/roundwomen2.svg"
+import twofaces1 from "./img/slide6/twofaces1.svg"
+import twofaces2 from "./img/slide6/twofaces2.svg"
+import twofaces3 from "./img/slide6/twofaces3.svg"
+// slide 8
+import Aviator from "./img/slide8/Aviator.webp"
+import Browline from "./img/slide8/Browline.webp"
+import CatEye from "./img/slide8/CatEye.webp"
+import Geometic from "./img/slide8/Geometric.webp"
+import Oval from "./img/slide8/Oval.webp"
+import Oversized from "./img/slide8/Oversized.webp"
+import Rectangle from "./img/slide8/Rectangle.webp"
+import Rimless from "./img/slide8/Rimless.webp"
+import Round from "./img/slide8/Round.webp"
+import Square from "./img/slide8/Square.webp"
+import Wayframe from "./img/slide8/Wayframe.webp"
+import Wrap from "./img/slide8/Wrap.webp"
+// slide 10
+import ArmaniExchange from "./img/slide10/ArmaniExchange.svg"
+import Burberry from "./img/slide10/Burberry.svg"
+import Coach from "./img/slide10/Coach.svg"
+import Gucci from "./img/slide10/Gucci.svg"
+import HilaryDuff from "./img/slide10/HilaryDuff.svg"
+import MichaelKros from "./img/slide10/MichaelKors.svg"
+import Oakley from "./img/slide10/Oakley.svg"
+import Prada from "./img/slide10/Prada.svg"
+import RayBan from "./img/slide10/RayBan.svg"
+import ToryBurch from "./img/slide10/ToryBurch.svg"
+import Versace from "./img/slide10/Versace.svg"
+import Vogue from "./img/slide10/Vogue.svg"
 // slide 11
-import gift from "../img/gift.svg"
+import gift from "./img/slide11/gift.svg"
 
 const Slides = function({slide, nextSlide, chooseParam, params}){
     switch (slide){
@@ -157,8 +181,10 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                     document.getElementsByClassName("slideF")[0].classList.add("d-none");
                 setTimeout(function(){
                     if (slide !== 4) return;
-                    document.getElementsByClassName("anim")[0].classList.add("d-none");
-                    document.getElementsByClassName("slideS")[0].classList.remove("d-none")
+                    if (document.getElementsByClassName("anim").length)
+                        document.getElementsByClassName("anim")[0].classList.add("d-none");
+                    if (document.getElementsByClassName("slideS").length)
+                        document.getElementsByClassName("slideS")[0].classList.remove("d-none")
                 }, 2000)
             }
             function changeSlide42(){
@@ -300,74 +326,74 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                     </div>
                 );
             }
-            case 6:    
-                if (params[0][0] === 5){
-                    return ( 
-                        <div className="slide-6">
-                            <p className="thirdAttention">Every face shape has a perfect fit. What’s yours?</p>
-                            <div className="card" onClick={() => chooseParam("long")}>
-                                <img src={ovalmen1} className="one" alt=""></img>
-                                <span></span>
-                                <p className="secondAttention">I have a long face</p>
-                            </div>
-                            <div className="card" onClick={() => chooseParam("round")}>
-                                <img src={roundmen} className="one" alt=""></img>
-                                <span></span>
-                                <p className="secondAttention">I have a round face</p>
-                            </div>
-                            <div className="card" onClick={() => chooseParam("between")}>
-                                <img src={ovalmen2} className="one" alt=""></img>
-                                <span></span>
-                                <p className="secondAttention">In between</p>
-                            </div>
-                            <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+        case 6:    
+            if (params[0][0] === 5){
+                return ( 
+                    <div className="slide-6">
+                        <p className="thirdAttention">Every face shape has a perfect fit. What’s yours?</p>
+                        <div className="card" onClick={() => chooseParam("long")}>
+                            <img src={ovalmen1} className="one" alt=""></img>
+                            <span></span>
+                            <p className="secondAttention">I have a long face</p>
                         </div>
-                    );
-                }else if(params[0][0] === 4){
-                    return ( 
-                        <div className="slide-6">
-                            <p className="thirdAttention">Every face shape has a perfect fit. What’s yours?</p>
-                            <div className="card" onClick={() => chooseParam("long")}>
-                                <img src={ovalwomen} className="one" alt=""></img>
-                                <span></span>
-                                <p className="secondAttention">I have a long face</p>
-                            </div>
-                            <div className="card" onClick={() => chooseParam("round")}>
-                                <img src={roundwomen} className="one" alt=""></img>
-                                <span></span>
-                                <p className="secondAttention">I have a round face</p>
-                            </div>
-                            <div className="card" onClick={() => chooseParam("between")}>
-                                <img src={roundwomen2} className="one" alt=""></img>
-                                <span></span>
-                                <p className="secondAttention">In between</p>
-                            </div>
-                            <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+                        <div className="card" onClick={() => chooseParam("round")}>
+                            <img src={roundmen} className="one" alt=""></img>
+                            <span></span>
+                            <p className="secondAttention">I have a round face</p>
                         </div>
-                    );
-                }else{
-                    return ( 
-                        <div className="slide-6">
-                            <p className="thirdAttention">Every face shape has a perfect fit. What’s yours?</p>
-                            <div className="card" onClick={() => chooseParam("long")}>
-                                <img src={twofaces1} className="two" alt=""></img>
-                                <span></span>
-                                <p className="secondAttention">I have a long face</p>
-                            </div>
-                            <div className="card" onClick={() => chooseParam("round")}>
-                                <img src={twofaces2} className="two" alt=""></img>
-                                <span></span>
-                                <p className="secondAttention">I have a round face</p>
-                            </div>
-                            <div className="card" onClick={() => chooseParam("between")}>
-                                <img src={twofaces3} className="two" alt=""></img>
-                                <span></span>
-                                <p className="secondAttention">In between</p>
-                            </div>
-                            <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+                        <div className="card" onClick={() => chooseParam("between")}>
+                            <img src={ovalmen2} className="one" alt=""></img>
+                            <span></span>
+                            <p className="secondAttention">In between</p>
                         </div>
-                    );
-                }
+                        <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+                    </div>
+                );
+            }else if(params[0][0] === 4){
+                return ( 
+                    <div className="slide-6">
+                        <p className="thirdAttention">Every face shape has a perfect fit. What’s yours?</p>
+                        <div className="card" onClick={() => chooseParam("long")}>
+                            <img src={ovalwomen} className="one" alt=""></img>
+                            <span></span>
+                            <p className="secondAttention">I have a long face</p>
+                        </div>
+                        <div className="card" onClick={() => chooseParam("round")}>
+                            <img src={roundwomen} className="one" alt=""></img>
+                            <span></span>
+                            <p className="secondAttention">I have a round face</p>
+                        </div>
+                        <div className="card" onClick={() => chooseParam("between")}>
+                            <img src={roundwomen2} className="one" alt=""></img>
+                            <span></span>
+                            <p className="secondAttention">In between</p>
+                        </div>
+                        <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+                    </div>
+                );
+            }else{
+                return ( 
+                    <div className="slide-6">
+                        <p className="thirdAttention">Every face shape has a perfect fit. What’s yours?</p>
+                        <div className="card" onClick={() => chooseParam("long")}>
+                            <img src={twofaces1} className="two" alt=""></img>
+                            <span></span>
+                            <p className="secondAttention">I have a long face</p>
+                        </div>
+                        <div className="card" onClick={() => chooseParam("round")}>
+                            <img src={twofaces2} className="two" alt=""></img>
+                            <span></span>
+                            <p className="secondAttention">I have a round face</p>
+                        </div>
+                        <div className="card" onClick={() => chooseParam("between")}>
+                            <img src={twofaces3} className="two" alt=""></img>
+                            <span></span>
+                            <p className="secondAttention">In between</p>
+                        </div>
+                        <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+                    </div>
+                );
+            }
         case 7:
             return(
                 <div className="slide-7">
@@ -386,19 +412,97 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
             );
 
         case 8:
+            var types = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            var names = ["rectangle", "browline", "aviator", "geometic", "wayframe", "round",
+                         "oval", "oversized", "cat_eye", "rimless", "square", "wrap"];
+            function chooseType(ind){
+                types[ind] = (types[ind]+1)%2;
+                if (types[ind])
+                    document.getElementsByClassName("card")[ind].classList.add("active");
+                else
+                    document.getElementsByClassName("card")[ind].classList.remove("active");
+                var s = 0;
+                for (var i = 0; i < types.length; i++)
+                   s += types[i]
+                if (s)
+                    document.getElementsByClassName("confirm")[0].classList.remove("notActive");
+                else 
+                    document.getElementsByClassName("confirm")[0].classList.add("notActive");
+            }
+            function slide8choose(){
+                if (document.getElementsByClassName("confirm")[0].classList.length === 1){
+                    var out = [];
+                    types.forEach(function(type, ind){
+                        if (types[ind])
+                            out.push(names[ind]);
+                    })
+                    chooseParam(out);
+                }
+            }
             return(
-                <div className="slide-7">
-                    <p className="thirdAttention">How would you define your facial features?</p>
-                    <div className="card" onClick={() => chooseParam("sharp")}>
-                        <p className="secondAttention">Sharp</p>
+                <div className="slide-8">
+                    <p className="thirdAttention">Which frame style are you looking for?</p>
+                    <p className="pickMore">You can pick more than one.</p>
+                    <div className="typeGlasses">
+                        <div className="row">
+                            <div className="card" onClick={() => chooseType(0)}>
+                                <img src={Rectangle} alt=""></img>
+                                <p className="secondAttention">Rectangle</p>
+                            </div>
+                            <div className="card" onClick={() => chooseType(1)}>
+                                <img src={Browline} alt=""></img>
+                                <p className="secondAttention">Browline</p>
+                            </div>
+                            <div className="card" onClick={() => chooseType(2)}>
+                                <img src={Aviator} alt=""></img>
+                                <p className="secondAttention">Aviator</p>
+                            </div>
+                            <div className="card" onClick={() => chooseType(3)}>
+                                <img src={Geometic} alt=""></img>
+                                <p className="secondAttention">Geometic</p>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="card" onClick={() => chooseType(4)}>
+                                <img src={Wayframe} alt=""></img>
+                                <p className="secondAttention">Wayframe</p>
+                            </div>
+                            <div className="card" onClick={() => chooseType(5)}>
+                                <img src={Round} alt=""></img>
+                                <p className="secondAttention">Round</p>
+                            </div>
+                            <div className="card" onClick={() => chooseType(6)}>
+                                <img src={Oval} alt=""></img>
+                                <p className="secondAttention">Oval</p>
+                            </div>
+                            <div className="card" onClick={() => chooseType(7)}>
+                                <img src={Oversized} alt=""></img>
+                                <p className="secondAttention">Oversized</p>
+                            </div>
+                        </div> 
+                        <div className="row">
+                            <div className="card" onClick={() => chooseType(8)}>
+                                <img src={CatEye} alt=""></img>
+                                <p className="secondAttention">Cat Eye</p>
+                            </div>
+                            <div className="card" onClick={() => chooseType(9)}>
+                                <img src={Rimless} alt=""></img>
+                                <p className="secondAttention">Rimless</p>
+                            </div>
+                            <div className="card" onClick={() => chooseType(10)}>
+                                <img src={Square} alt=""></img>
+                                <p className="secondAttention">Square</p>
+                            </div>
+                            <div className="card" onClick={() => chooseType(11)}>
+                                <img src={Wrap} alt=""></img>
+                                <p className="secondAttention">Wrap</p>
+                            </div>
+                        </div> 
                     </div>
-                    <div className="card" onClick={() => chooseParam("rounded")}>
-                        <p className="secondAttention">Rounded</p>
-                    </div>
-                    <div className="card" onClick={() => chooseParam("between")}>
-                        <p className="secondAttention">In between</p>
-                    </div>
-                    <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+
+                    <span className="confirm notActive" onClick={slide8choose}>
+                        <p className="buttonText">Continue</p>
+                    </span>
                 </div>
             );
         case 9:
@@ -414,22 +518,87 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                 </div>
             );
         case 10:
+            var types2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            var names2 = ["ray_ban", "oakley", "gucci", "armani_exchange", "hilary_duff", "prada",
+                         "versace", "vogue", "michael_kros", "coach", "tory_burch", "burberry"];
+            function chooseType2(ind){
+                types2[ind] = (types2[ind]+1)%2;
+                if (types2[ind])
+                    document.getElementsByClassName("card")[ind].classList.add("active");
+                else
+                    document.getElementsByClassName("card")[ind].classList.remove("active");
+                var s = 0;
+                for (var i = 0; i < types2.length; i++)
+                   s += types2[i]
+                if (s)
+                    document.getElementsByClassName("confirm")[0].classList.remove("notActive");
+                else 
+                    document.getElementsByClassName("confirm")[0].classList.add("notActive");
+            }
+            function slide10choose(){
+                if (document.getElementsByClassName("confirm")[0].classList.length === 1){
+                    var out = [];
+                    types2.forEach(function(type, ind){
+                        if (types2[ind])
+                            out.push(names2[ind]);
+                    })
+                    chooseParam(out);
+                }
+            }
             return(
-                <div className="slide-7">
-                    <p className="thirdAttention">How would you define your facial features?</p>
-                    <div className="card" onClick={() => chooseParam("sharp")}>
-                        <p className="secondAttention">Sharp</p>
+                <div className="slide-10">
+                    <p className="thirdAttention">Choose your favorite brands</p>
+                    <p className="pickMore">You can pick more than one.</p>
+                    <div className="typeGlasses">
+                        <div className="row">
+                            <div className="card" onClick={() => chooseType2(0)}>
+                                <img src={RayBan} alt=""></img>
+                            </div>
+                            <div className="card" onClick={() => chooseType2(1)}>
+                                <img src={Oakley} alt=""></img>
+                            </div>
+                            <div className="card" onClick={() => chooseType2(2)}>
+                                <img src={Gucci} alt=""></img>
+                            </div>
+                            <div className="card" onClick={() => chooseType2(3)}>
+                                <img src={ArmaniExchange} alt=""></img>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="card" onClick={() => chooseType2(4)}>
+                                <img src={HilaryDuff} alt=""></img>
+                            </div>
+                            <div className="card" onClick={() => chooseType2(5)}>
+                                <img src={Prada} alt=""></img>
+                            </div>
+                            <div className="card" onClick={() => chooseType2(6)}>
+                                <img src={Versace} alt=""></img>
+                            </div>
+                            <div className="card" onClick={() => chooseType2(7)}>
+                                <img src={Vogue} alt=""></img>
+                            </div>
+                        </div> 
+                        <div className="row">
+                            <div className="card" onClick={() => chooseType2(8)}>
+                                <img src={MichaelKros} alt=""></img>
+                            </div>
+                            <div className="card" onClick={() => chooseType2(9)}>
+                                <img src={Coach} alt=""></img>
+                            </div>
+                            <div className="card" onClick={() => chooseType2(10)}>
+                                <img src={ToryBurch} alt=""></img>
+                            </div>
+                            <div className="card" onClick={() => chooseType2(11)}>
+                                <img src={Burberry} alt=""></img>
+                            </div>
+                        </div> 
                     </div>
-                    <div className="card" onClick={() => chooseParam("rounded")}>
-                        <p className="secondAttention">Rounded</p>
-                    </div>
-                    <div className="card" onClick={() => chooseParam("between")}>
-                        <p className="secondAttention">In between</p>
-                    </div>
-                    <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
+
+                    <span className="confirm notActive" onClick={slide10choose}>
+                        <p className="buttonText">Continue</p>
+                    </span>
                 </div>
             );
-
         case 11:
             return ( 
                 <div className="slide-11">

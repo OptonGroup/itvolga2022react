@@ -26,8 +26,12 @@ header p{
 }
 
 @media (max-width: 768px) {
-    header .logo {
+    header.startHeader .logo {
         margin: 14px 0 14px 25px;
+    }
+
+    header.defineHeader .logo {
+        margin: 10px 0 10px 25px;
     }
 
     header .next{
@@ -50,8 +54,12 @@ header p{
 }
 
 @media (min-width: 768px) {
-    header .logo {
+    header.startHeader .logo {
         margin: 14px 0 14px 110px;
+    }
+
+    header.defineHeader .logo {
+        margin: 10px 0 10px 110px;
     }
 
     header .next{

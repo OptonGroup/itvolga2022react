@@ -1,6 +1,6 @@
 import React from "react";
-import '../styles/animate.css'
-import like from "../img/like.svg"
+import './animate.css'
+import like from "./img/like.svg"
 
 const Animate = function({text, classN=""}){
     classN += " anim";

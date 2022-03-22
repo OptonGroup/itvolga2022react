@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Header from './comp/header.jsx'
-import Slides from './comp/slides.jsx'
-import './styles/widget.css'
+import Header from './comp/header/header.jsx'
+import Slides from './comp/slides/slides.jsx'
+import './widget.css'
 
 var link = document.getElementById("glasses-quiz-widget").dataset.source;
 var params = [[null], [null], [null], [null], [null, null], [null], [null], [null], [null], [null]];
@@ -39,22 +39,20 @@ function Widget() {
                 }
 
             }
-           console.log(paramsName[ind], param);
         })
         new_link = new_link.slice(0, -1);
-        console.log(new_link);
-        console.log('\n');
+        console.log(new_link, "\n");
     }
 
     function chooseParam(param, next=true){
-        console.log(param);
-        console.log(params)
         if (slide === 5){
             if (typeof param === 'string')
                 params[slide-1][1] = param;
             else
                 params[slide-1][0] = param;
-        }else
+        }else if(slide === 10)
+            params[slide-2] = param;
+        else
             params[slide-1][0] = param;
         if (next)
             nextSlide();

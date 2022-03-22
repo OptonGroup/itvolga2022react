@@ -1,10 +1,10 @@
 import React from "react";
-import logo from '../img/logo.svg';
-import next from '../img/next.svg';
-import exit from '../img/exit.svg';
-import back from '../img/back.svg';
+import logo from './img/logo.svg';
+import next from './img/next.svg';
+import exit from './img/exit.svg';
+import back from './img/back.svg';
 
-import '../styles/header.css'
+import './header.css'
 
 
 const Header = function({slide, nextSlide, previousSlide, zeroSlide}){
