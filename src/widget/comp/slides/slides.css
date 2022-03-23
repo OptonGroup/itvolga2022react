@@ -121,6 +121,7 @@ h1, h2, h3, h4, h5, p{
 .bottomText{
     position: absolute;
     bottom: 24px;
+    margin-top: 10px;
     left: 50%;
     transform: translate(-50%, 0);
     font-style: normal;
@@ -137,7 +138,7 @@ h1, h2, h3, h4, h5, p{
 }
 
 .slide-1, .slide-2, .slide-3, .slide-4, .slide-6, .slide-7, .slide-11{
-    height: calc(100% - 58px - 50px);
+    height: calc(100% - 116px);
     position: relative;
 }
 
@@ -458,16 +459,13 @@ h1, h2, h3, h4, h5, p{
         height: 89px;
         margin: 14px calc(50% - 314px / 2);
     }
-
-    .slide-6 .card img.one{
-        margin: 27px 23px 27px 25px;
-    }
-
     .slide-6 .card img.one{
         width: 33px;
+        margin: 27px 23px 27px 25px;
     }
     .slide-6 .card img.two{
         width: 60px;
+        margin: auto 15px auto;
     }
 
     .slide-6 .card span{
