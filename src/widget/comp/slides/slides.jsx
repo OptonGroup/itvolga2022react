@@ -118,35 +118,34 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                     </div>
                 );
             }
-            
         case 3:
             function changeSlide3(){
                 if (slide !== 3) return;
-                if (document.getElementsByClassName("slideS").length)
-                    document.getElementsByClassName("slideS")[0].classList.remove("d-none");
-                if (document.getElementsByClassName("slideF").length)
-                    document.getElementsByClassName("slideF")[0].classList.add("d-none");
+                if (document.getElementById("slideS") != null)
+                    document.getElementById("slideS").classList.remove("d-none");
+                if (document.getElementById("slideF") != null)
+                    document.getElementById("slideF").classList.add("d-none");
             }
             setTimeout(function(){
                 if (slide !== 3) return;
                 if (document.getElementsByClassName("anim").length)
                     document.getElementsByClassName("anim")[0].classList.add("d-none");
-                if (document.getElementsByClassName("slideF").length)
-                    document.getElementsByClassName("slideF")[0].classList.remove("d-none")
+                if (document.getElementById("slideF") != null)
+                    document.getElementById("slideF").classList.remove("d-none")
             }, 2000);
 
             if (document.getElementsByClassName("anim").length)
                     document.getElementsByClassName("anim")[0].classList.remove("d-none");
-            if (document.getElementsByClassName("slideF").length)
-                    document.getElementsByClassName("slideF")[0].classList.add("d-none");
-            if (document.getElementsByClassName("slideS").length)
-                document.getElementsByClassName("slideS")[0].classList.add("d-none");
+            if (document.getElementById("slideF") != null)
+                    document.getElementById("slideF").classList.add("d-none");
+            if (document.getElementById("slideS") != null)
+                document.getElementById("slideS").classList.add("d-none");
             
             return ( 
                 <div className="slide-3">
                     <Anim text="Let's get to know you!"/>
 
-                    <div className="slideF d-none">
+                    <div id="slideF" data-testid="slideF" className="d-none">
                         <p className="thirdAttention">Do you need vision correction?</p>
                         <div className="card" onClick={changeSlide3}>
                             <p className="secondAttention">Yes</p>
@@ -157,7 +156,7 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                         <p className="bottomText" onClick={() => chooseParam(null)}>Skip</p>
                     </div>
 
-                    <div className="slideS d-none">
+                    <div id="slideS" data-testid="slideS" className="d-none">
                         <p className="thirdAttention">What do you need your glasses for?</p>
                         <div className="card" onClick={() => chooseParam(6)}>
                             <p className="secondAttention">Near Vision</p>
@@ -177,33 +176,33 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                 if (slide !== 4) return;
                 if (document.getElementsByClassName("anim").length)
                     document.getElementsByClassName("anim")[0].classList.remove("d-none");
-                if (document.getElementsByClassName("slideF").length)
-                    document.getElementsByClassName("slideF")[0].classList.add("d-none");
+                if (document.getElementById("slideF") != null)
+                    document.getElementById("slideF").classList.add("d-none");
                 setTimeout(function(){
                     if (slide !== 4) return;
                     if (document.getElementsByClassName("anim").length)
                         document.getElementsByClassName("anim")[0].classList.add("d-none");
-                    if (document.getElementsByClassName("slideS").length)
-                        document.getElementsByClassName("slideS")[0].classList.remove("d-none")
+                    if (document.getElementById("slideS") != null)
+                        document.getElementById("slideS").classList.remove("d-none")
                 }, 2000)
             }
             function changeSlide42(){
                 if (slide !== 4) return;
-                if (document.getElementsByClassName("slideS").length)
-                    document.getElementsByClassName("slideS")[0].classList.remove("d-none");
-                if (document.getElementsByClassName("slideF").length)
-                    document.getElementsByClassName("slideF")[0].classList.add("d-none");
+                if (document.getElementById("slideS") != null)
+                    document.getElementById("slideS").classList.remove("d-none");
+                if (document.getElementById("slideF") != null)
+                    document.getElementById("slideF").classList.add("d-none");
             }
-            if (document.getElementsByClassName("slideF").length)
-                document.getElementsByClassName("slideF")[0].classList.remove("d-none");
+            if (document.getElementById("slideF") != null)
+                document.getElementById("slideF").classList.remove("d-none");
             if (document.getElementsByClassName("anim").length)
                 document.getElementsByClassName("anim")[0].classList.add("d-none");
-            if (document.getElementsByClassName("slideS").length)
-                document.getElementsByClassName("slideS")[0].classList.add("d-none");
+            if (document.getElementById("slideS") != null)
+                document.getElementById("slideS").classList.add("d-none");
             
             return ( 
                 <div className="slide-4">
-                    <div className="slideF">
+                    <div id="slideF" data-testid="slideF" >
                         <p className="thirdAttention">What’s your current frame size?</p>
                         <img src={sizes} alt=""></img>
                         <div className="card" onClick={function(event){chooseParam(66, false);changeSlide41();}}>
@@ -223,7 +222,7 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
 
                     <Anim classN="d-none" text="No worries, we’ve got you!"/>
 
-                    <div className="slideS d-none">
+                    <div id="slideS" data-testid="slideS" className="d-none">
                         <p className="thirdAttention">How wide would you say your face is?</p>
                         <div className="card" onClick={() => chooseParam(66)}>
                             <p className="secondAttention">Wider Than Average</p>
@@ -241,18 +240,18 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
         case 5:
             function changeSlide5(){
                 if (slide !== 5) return;
-                if (document.getElementsByClassName("slideS").length)
-                    document.getElementsByClassName("slideS")[0].classList.remove("d-none");
-                if (document.getElementsByClassName("slideF").length)
-                    document.getElementsByClassName("slideF")[0].classList.add("d-none");
+                if (document.getElementById("slideS") != null)
+                    document.getElementById("slideS").classList.remove("d-none");
+                if (document.getElementById("slideF") != null)
+                    document.getElementById("slideF").classList.add("d-none");
             }
 
             if (params[1][0] === 211){
-                if (document.getElementsByClassName("slideS").length)
-                    document.getElementsByClassName("slideS")[0].classList.remove("d-none");
+                if (document.getElementById("slideS") != null)
+                    document.getElementById("slideS").classList.remove("d-none");
                 return ( 
                     <div className="slide-5">
-                        <div className="slideS">
+                        <div id="slideS" data-testid="slideS">
                                 <p className="thirdAttention">When you’re out and about, which shade of lenses do you prefer?</p>
                                 <div className="card" onClick={() => chooseParam("dark")}>
                                     <img src={darkshade} alt=""></img>
@@ -273,11 +272,11 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                     </div>
                 );
             }else if(params[1][0] === 210){
-                if (document.getElementsByClassName("slideF").length)
-                    document.getElementsByClassName("slideF")[0].classList.remove("d-none");
+                if (document.getElementById("slideF") != null)
+                    document.getElementById("slideF").classList.remove("d-none");
                 return ( 
                     <div className="slide-5">
-                        <div className="slideF">
+                        <div id="slideF" data-testid="slideF" >
                             <p className="thirdAttention">Would you like to protect your eyes from light emanating from screens?</p>
                             <div className="card" onClick={() => chooseParam(true)}>
                                 <p className="secondAttention">Yes</p>
@@ -289,13 +288,13 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                     </div>
                 );
             }else{
-                if (document.getElementsByClassName("slideS").length)
-                    document.getElementsByClassName("slideF")[0].classList.remove("d-none");
-                if (document.getElementsByClassName("slideS").length)
-                    document.getElementsByClassName("slideS")[0].classList.add("d-none");
+                if (document.getElementById("slideS") != null)
+                    document.getElementById("slideF").classList.remove("d-none");
+                if (document.getElementById("slideS") != null)
+                    document.getElementById("slideS").classList.add("d-none");
                 return ( 
                     <div className="slide-5">
-                        <div className="slideF">
+                        <div id="slideF" data-testid="slideF" >
                             <p className="thirdAttention">Would you like to protect your eyes from light emanating from screens?</p>
                             <div className="card" onClick={function(event){chooseParam(true, false);changeSlide5();}}>
                                 <p className="secondAttention">Yes</p>
@@ -305,7 +304,7 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                             </div>
                         </div>
 
-                        <div className="slideS d-none">
+                        <div id="slideS" data-testid="slideS" className="d-none">
                             <p className="thirdAttention">When you’re out and about, which shade of lenses do you prefer?</p>
                             <div className="card" onClick={() => chooseParam("dark")}>
                                 <img src={darkshade} alt=""></img>
@@ -410,7 +409,6 @@ const Slides = function({slide, nextSlide, chooseParam, params}){
                     <p className="bottomText" onClick={() => chooseParam(null)}>I don’t know</p>
                 </div>
             );
-
         case 8:
             var types = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
             var names = ["rectangle", "browline", "aviator", "geometic", "wayframe", "round",

@@ -134,6 +134,7 @@ h1, h2, h3, h4, h5, p{
 }
 
 .d-none{
+    visibility: hidden;
     display: none;
 }
 
@@ -256,13 +257,13 @@ h1, h2, h3, h4, h5, p{
 }
 
 @media (max-width: 768px) {
-    .slide-3 .slideF .card{
+    .slide-3 #slideF .card{
         position: relative;
         width: 274px;
         height: 120px;
         margin: 14px calc(50% - 274px / 2);
     }
-    .slide-3 .slideS .card{
+    .slide-3 #slideS .card{
         position: relative;
         width: 274px;
         height: 84px;
@@ -271,13 +272,13 @@ h1, h2, h3, h4, h5, p{
 }
 
 @media (min-width: 768px) {
-    .slide-3 .slideF .card{
+    .slide-3 #slideF .card{
         position: relative;
         width: 411px;
         height: 180px;
         margin: 14px calc(50% - 411px / 2);
     }
-    .slide-3 .slideS .card{
+    .slide-3 #slideS .card{
         position: relative;
         width: 411px;
         height: 126px;
@@ -302,13 +303,13 @@ h1, h2, h3, h4, h5, p{
 }
 
 @media (max-width: 768px) {
-    .slide-4 .slideF .card{
+    .slide-4 #slideF .card{
         position: relative;
         width: 318px;
         height: 56px;
         margin: 14px calc(50% - 318px / 2);
     }
-    .slide-4 .slideS .card{
+    .slide-4 #slideS .card{
         position: relative;
         width: 304px;
         height: 84px;
@@ -317,13 +318,13 @@ h1, h2, h3, h4, h5, p{
 }
 
 @media (min-width: 768px) {
-    .slide-4 .slideF .card{
+    .slide-4 #slideF .card{
         position: relative;
         width: 477px;
         height: 84px;
         margin: 14px calc(50% - 477px / 2);
     }
-    .slide-4 .slideS .card{
+    .slide-4 #slideS .card{
         position: relative;
         width: 456px;
         height: 126px;
@@ -349,7 +350,7 @@ h1, h2, h3, h4, h5, p{
     right: 21px;
 }
 
-.slide-4 .slideS .card p{
+.slide-4 #slideS .card p{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -360,84 +361,84 @@ h1, h2, h3, h4, h5, p{
     margin: 50px 23px 32px 23px;
 }
 
-.slide-5 .slideF .card p{
+.slide-5 #slideF .card p{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.slide-5 .slideS .card{
+.slide-5 #slideS .card{
     display: flex;
 }
 
 @media (max-width: 768px) {
-    .slide-5 .slideF .card{
+    .slide-5 #slideF .card{
         position: relative;
         width: 273px;
         height: 138px;
         margin: 14px calc(50% - 273px / 2);
     }
-    .slide-5 .slideS .card{
+    .slide-5 #slideS .card{
         position: relative;
         width: 304px;
         height: 89px;
         margin: 14px calc(50% - 304px / 2);
     }
 
-    .slide-5 .slideS .card:nth-child(2) img, .slide-5 .slideS .card:nth-child(3) img{
+    .slide-5 #slideS .card:nth-child(2) img, .slide-5 #slideS .card:nth-child(3) img{
         width: 44px;
         margin: 27px 23px 27px 25px;
     }
     
-    .slide-5 .slideS .card:nth-child(4) img{
+    .slide-5 #slideS .card:nth-child(4) img{
         width: 52px;
         margin: 28.5px 18px 28.5px 24px;
     }
 
-    .slide-5 .slideS .card span{
+    .slide-5 #slideS .card span{
         width: 1px;
         height: 35px;
         margin: 27px 18px 27px 0;
         background-color: #DEDEDE;
     }
-    .slide-5 .slideS .card p{
+    .slide-5 #slideS .card p{
         margin: 33.5px 0;
         line-height: inherit;
     }
 }
 
 @media (min-width: 768px) {
-    .slide-5 .slideF .card{
+    .slide-5 #slideF .card{
         position: relative;
         width: 411px;
         height: 180px;
         margin: 14px calc(50% - 411px / 2);
     }
-    .slide-5 .slideS .card{
+    .slide-5 #slideS .card{
         position: relative;
         width: 411px;
         height: 126px;
         margin: 14px calc(50% - 411px / 2);
     }
 
-    .slide-5 .slideS .card:nth-child(2) img, .slide-5 .slideS .card:nth-child(3) img{
+    .slide-5 #slideS .card:nth-child(2) img, .slide-5 #slideS .card:nth-child(3) img{
         width: 59.5px;
         margin: 36px 30px 36px 38px;
     }
     
-    .slide-5 .slideS .card:nth-child(4) img{
+    .slide-5 #slideS .card:nth-child(4) img{
         width: 70px;
         margin: 38.5px 25px 38.5px 32.5px;
     }
 
-    .slide-5 .slideS .card span{
+    .slide-5 #slideS .card span{
         width: 1.5px;
         height: 47px;
         margin: 36.5px 24.5px 36.5px 0;
         background-color: #DEDEDE;
     }
-    .slide-5 .slideS .card p{
+    .slide-5 #slideS .card p{
         margin: 48.5px 0;
         line-height: inherit;
     }

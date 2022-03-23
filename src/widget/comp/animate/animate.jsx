@@ -5,7 +5,7 @@ import like from "./img/like.svg"
 const Animate = function({text, classN=""}){
     classN += " anim";
     return (
-        <div className={classN}>
+        <div className={classN} data-testid="anim">
             <div className='circle'>
                 <img src={like} alt=''></img>
             </div>
